@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FrontToBack.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace FrontToBack.DAL
 {
@@ -8,5 +9,11 @@ namespace FrontToBack.DAL
 		{
 
 		}
+		public DbSet<Slider> Sliders { get; set; }
+		public DbSet<SliderContent> SliderContents { get; set; }
+		public DbSet<Category> Categories { get; set; }
+		public DbSet<Product> Products { get; set; }
+		public DbSet<ProductImage> ProductImages { get; set; }
+
 	}
 }
