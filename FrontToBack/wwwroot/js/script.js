@@ -1,13 +1,5 @@
 $(document).ready(function () {
 
-    //loadMore
-
-    $(document).on("click", "#loadMoreBtn", function () {
-        alert("salam")
-    });
-
-
-
     // HEADER
 
     $(document).on('click', '#search', function () {
