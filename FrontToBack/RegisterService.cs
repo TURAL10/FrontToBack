@@ -7,7 +7,10 @@ namespace FrontToBack
 	{
 		public static void Register(this IServiceCollection services, IConfiguration config)
 		{
-			services.AddControllersWithViews();
+			services.AddControllersWithViews()
+				.AddNewtonsoftJson(options =>
+				options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 			services.AddDbContext<AppDbContext>(opt =>
 			{
 				opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));

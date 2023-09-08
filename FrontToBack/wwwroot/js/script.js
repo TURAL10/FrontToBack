@@ -1,5 +1,45 @@
 $(document).ready(function () {
 
+    //search
+
+    $(document).on("keyup", "#input-search", function () {
+        let value = $("#input-search").val().trim();
+        if (value.length > 0) {
+            $("#search-list li").slice(1).remove();
+            $.ajax({
+                method: "get",
+                url: "/product/search?search=" + value,
+                success: function (res) {
+                    $("#search-list").append(res);
+                }
+            })
+        }
+    })
+
+
+
+
+
+
+
+
+
+    //loadMore
+    let skip = 4;
+    let productCount = $("#productCount").val();
+    $(document).on("click", "#loadMoreBtn", function () {
+        $.ajax({
+            method: "get",
+            url: "/product/loadmore?skip=" + skip,
+            success: function (data) {
+                skip += 4;
+                $("#productList").append(data);
+                if (skip >= productCount) {
+                    $("#loadMoreBtn").remove();
+                }
+            }
+        })
+    })
     // HEADER
 
     $(document).on('click', '#search', function () {
