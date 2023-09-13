@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrontToBack.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230908144753_addbiotable")]
+    [Migration("20230912113821_addbiotable")]
     partial class addbiotable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,15 +35,15 @@ namespace FrontToBack.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Facebook")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Key")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Value")
+                    b.Property<string>("Instagram")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

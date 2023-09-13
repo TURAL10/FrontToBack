@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FrontToBack.ViewComponents
 {
-    public class HeaderViewComponent:ViewComponent
+    public class FooterViewComponent:ViewComponent
     {
         private readonly AppDbContext _appDbContext;
 
-        public HeaderViewComponent(AppDbContext appDbContext)
+        public FooterViewComponent(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }

@@ -1,4 +1,5 @@
 ﻿using FrontToBack.DAL;
+using FrontToBack.Entities;
 using FrontToBack.ModelViews;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,10 @@ namespace FrontToBack.Controllers
 			vm.Sliders=_appDbContext.Sliders.ToList();
 			vm.SliderContent=_appDbContext.SliderContents.FirstOrDefault();
 			vm.Categories=_appDbContext.Categories.ToList();
+
+
+			
+
 			return View(vm);
 		}
 

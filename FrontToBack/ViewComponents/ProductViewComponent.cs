@@ -12,12 +12,11 @@ namespace FrontToBack.ViewComponents
 		{
 			_appDbContext = appDbContext;
 		}
-		public async Task<IViewComponentResult> InvokeAsync(int take)
+		public async Task<IViewComponentResult> InvokeAsync()
 		{
 			var products = _appDbContext.Products
 				.Include(p => p.Category)
 				.Include(p => p.ProductImages)
-				.Take(take)
 				.ToList();
 			return View(await Task.FromResult(products));
 		}
