@@ -1,4 +1,5 @@
 ﻿using FrontToBack.DAL;
+using FrontToBack.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace FrontToBack
@@ -19,6 +20,8 @@ namespace FrontToBack
 			{
 				option.IdleTimeout = TimeSpan.FromMinutes(1);
 			});
+			services.AddScoped<IBasket, BasketServices>();
+			services.AddHttpContextAccessor();
 		}
 	}
 }

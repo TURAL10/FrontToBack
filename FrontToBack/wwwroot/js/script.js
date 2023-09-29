@@ -1,4 +1,29 @@
-$(document).ready(function () {
+﻿$(document).ready(function () {
+
+
+    $(".decreaseBtn").click(function () {
+        var itemId = $(this).data("item-id");
+        var countSpan = $(".basketCount[data-item-id='" + itemId + "']");
+        var currentCount = parseInt(countSpan.text());
+        if (currentCount > 0) {
+            currentCount--;
+            countSpan.text(currentCount);
+        }
+    });
+
+    $(".increaseBtn").click(function () {
+        var itemId = $(this).data("item-id");
+        var countSpan = $(".basketCount[data-item-id='" + itemId + "']");
+        var currentCount = parseInt(countSpan.text());
+        currentCount++;
+        countSpan.text(currentCount);
+    });
+
+
+
+   
+
+
 
     //search
 
